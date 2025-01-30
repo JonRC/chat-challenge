@@ -13,7 +13,7 @@ The server will be running on `http://localhost:3000`
 
 
 ## Try it out
-I recommend test the API using the file [api.http](./api.http) using the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) vscode extension to test the API. It allows you to send request directly from the editor.   
+I recommend test the API using the file [api.http](./api.http) and [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) vscode extension. It allows you to send request directly from the editor. Just install the plugin and open the file.   
 Or you can use any other API client like Postman or Insomnia.
 
 ## API
