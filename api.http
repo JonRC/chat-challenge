@@ -1,0 +1,59 @@
+@host = http://localhost:3030
+
+POST {{host}}/users
+Content-Type: application/json
+
+{
+  "username": "jonrc"
+}
+
+###
+
+POST {{host}}/groups
+Content-Type: application/json
+
+{
+  "name": "developer group"
+}
+
+###
+
+# @name getGroups
+GET {{host}}/groups
+
+###
+
+POST {{host}}/messages
+Authorization: jonrc
+Content-Type: application/json
+
+{
+  "groupId": "{{getGroups.response.body.groups.[0].id}}",
+  "content": "Hey there! This is my first message in the group"
+}
+
+###
+# @name getMessages
+GET {{host}}/messages?group={{getGroups.response.body.groups.[0].id}}
+Authorization: jonrc
+
+###
+
+GET {{host}}/messages/{{getMessages.response.body.messages.[0].id}}
+Authorization: jonrc
+
+###
+
+DELETE {{host}}/messages/{{getMessages.response.body.messages.[0].id}}
+Authorization: jonrc
+
+###
+
+PUT {{host}}/messages/{{getMessages.response.body.messages.[0].id}}
+Authorization: jonrc
+Content-Type: application/json
+
+{
+  "content": "This is an edited message"
+}
+
