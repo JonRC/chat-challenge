@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "migration": "prisma generate",
+    "migrate": "prisma generate",
     "start": "tsx watch src/main.ts"
   },
   "keywords": [],
